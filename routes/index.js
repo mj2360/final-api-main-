@@ -6,7 +6,7 @@ const firestore = require("firebase/firestore/lite");
 const db = firestore.getFirestore();
 
 router.get("/", (req, res) => {
-    const canvases = firestore.getDocs(firestore.collection(db, "canvas"));
+    const canvases = firestore.getDocs(firestore.collection(db, "canvases"));
   
     const canvasesArray = [];
   

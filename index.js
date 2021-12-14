@@ -17,7 +17,7 @@ const firebaseConfig = {
 
 const indexRoute = require('./routes/index');
 const createCanvasRoute = require ("./routes/createCanvasPost");
-const canvasRoute = require ('.routes/canvas'); 
+const canvasRoute = require ('./routes/canvas'); 
 
   app.use(function (req, res, next) {
     // Website you wish to allow to connect
