@@ -3,16 +3,18 @@ const router = express.Router();
 
 const firestore = require("firebase/firestore/lite");
 
-const db = firebase.getFirestore();
+const db = firestore.getFirestore();
 
 router.get("/", (req, res) => {
     const canvases = firestore.getDocs(firestore.collection(db, "canvas"));
   
     const canvasesArray = [];
   
-    blogpost
+    canvases
       .then((response) => {
         response.forEach((doc) => {
+          const docData = doc.data(); 
+          docData.id = doc.id; 
           canvasesArray.push(doc.data());
         });
         return res.send(canvasesArray);
