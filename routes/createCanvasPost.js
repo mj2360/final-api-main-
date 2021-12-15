@@ -8,7 +8,7 @@ const db = firestore.getFirestore();
 
 router.get("/", (req, res) => { 
     const queryParams = req.query; 
-    const {imageAlt, imageSrc, text, userId, userName} = queryParams;
+    const {imageAlt, imageSrc, text, userId} = queryParams;
 
       const setCanvasPost = firestore.addDoc(
         firestore.collection(db, "canvases"),
@@ -17,7 +17,6 @@ router.get("/", (req, res) => {
             imageSrc, 
             text, 
             userId, 
-            userName
         }
       );
 
